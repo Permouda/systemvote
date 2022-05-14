@@ -22,6 +22,5 @@ namespace systemvote.Controllers
        }
 
     }
-
-
+    
     }

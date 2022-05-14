@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Data.Entity.Core;
 namespace systemvote.Models
 {
     public class Partie_politique

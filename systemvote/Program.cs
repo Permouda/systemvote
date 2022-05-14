@@ -22,5 +22,6 @@ namespace systemvote
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+            
     }
 }

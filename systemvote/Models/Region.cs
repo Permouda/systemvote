@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Data.Entity.Core;
 using System.ComponentModel.DataAnnotations;
 namespace systemvote.Models
 {

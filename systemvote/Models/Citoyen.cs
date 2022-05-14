@@ -1,11 +1,11 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
-using System.Data.Entity.Core;
 using System.ComponentModel.DataAnnotations;
 namespace systemvote.Models
 {
     public class Citoyen
     {
-
 
         public Citoyen(int id, string nom, string prenom, int cin)
         {
@@ -14,7 +14,8 @@ namespace systemvote.Models
            this.Prenom = prenom;
            this.CIN = cin;      
         }
-        [Key]
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public int Citoyen_id { get; set; }
         public string? Nom { get; set; }
         public string Prenom { get; set; }

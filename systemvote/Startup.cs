@@ -10,7 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Serialization;
+using systemvote.Models;
 
 namespace systemvote
 {
@@ -27,11 +30,16 @@ namespace systemvote
         public void ConfigureServices(IServiceCollection services)
         {
 
+
+            services.AddDbContext<EvotingContext>(options => options.UseNpgsql(Configuration.GetConnectionString("EvotingAppCon")));
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "systemvote", Version = "v1" });
             });
+
+            services.AddControllers().AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

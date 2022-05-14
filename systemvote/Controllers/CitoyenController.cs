@@ -26,15 +26,17 @@ namespace systemvote.Controllers
     if(citoyen == null)
         return NotFound();
 
-    return citoyen;
+        return citoyen;
        }
+
        [HttpPost]
-       public IActionResult Create(Citoyen citoyen)
+        public IActionResult Create(Citoyen citoyen)
        {
             CitoyenServices.Add(citoyen);
             return CreatedAtAction(nameof(Create), citoyen);
 
        }
+       
        [HttpPut("{id}")]
        public IActionResult Update(int id,Citoyen citoyen)
        {
